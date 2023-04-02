@@ -62,10 +62,46 @@ Gerekli şeyleri bitirdikten sonra çalışmanızı daha da ileri götürebilirs
 - [ ] Stil bileşenleri ile effektler veya animasyonlar oluşturun.
 - [ ] Bir dizi promise'ini çözmek için Promise.all'ı kullanın.
 
-
 ## Esnek Mülakat Soruları
 
 1. React JS nedir ve hangi sorunları çözer? Yanıtınızı sınıfta tanıtılan kavramlarla ve web'deki kişisel araştırmanızla destekleyin.
-1. Bileşen statelerini tanımlayın.
-1. Propları açıklayın.
-1. Side effektler nelerdir ve bir React bileşenindeki efektleri belirli state veya prop değişiklikleriyle nasıl senkronize edersiniz?
+
+React JS, Facebook tarafından geliştirilen bir JavaScript kütüphanesidir ve özellikle web uygulamalarının kullanıcı arayüzlerinin geliştirilmesinde kullanılır. React JS, birçok sorunu çözmek için tasarlanmıştır. Bunlardan bazıları şunlardır:
+
+Karmaşık UI yönetimi: Web uygulamalarının kullanıcı arayüzlerinin yönetimi genellikle karmaşıktır ve React JS, UI bileşenlerinin modüler ve yeniden kullanılabilir bir şekilde tasarlanmasına olanak tanır. Bu, kodun daha kolay bakımını sağlar ve geliştirme sürecini hızlandırır.
+
+Performans sorunları: Web uygulamalarının kullanıcı arayüzlerinin performansı, özellikle büyük ve karmaşık uygulamalarda sorun olabilir. React JS, sanal DOM (Document Object Model) kullanarak sadece değişen bileşenlerin güncellenmesine izin verir, bu da uygulamanın performansını artırır.
+
+Karmaşık veri akışı: Web uygulamaları, genellikle farklı bileşenler arasında veri alışverişi yapar. React JS, veri akışını kolaylaştıran tek yönlü bir veri bağlama modeli kullanır. Bu, uygulamanın karmaşıklığını azaltır ve hata ayıklamayı kolaylaştırır.
+
+Component encapsulation: React, her bileşenin kendi bağımsız bağlamında çalışmasına izin vererek bileşen sarmalama (component encapsulation) sağlar. Bu, her bileşenin kendi özelliklerini ve durumunu korumasına yardımcı olur ve uygulamanın daha güvenli hale gelmesini sağlar.
+
+Kolay test edilebilirlik: React JS, bileşenlerin tek başına test edilebilmesine izin verir. Bu, yazılım geliştiricilerinin kodlarını daha kolay test edebilmelerine ve hataları daha kolay tespit edebilmelerine olanak tanır.
+
+2. Bileşen statelerini tanımlayın.
+
+React JS'teki bileşenler, bir kullanıcının bir web uygulamasında etkileşimde bulunduğu UI öğeleridir. Bileşen stateleri, bir bileşenin durumunu, özelliklerini ve davranışını yönetmek için kullanılır.
+
+Bir bileşenin durumu, bileşenin içindeki verilerin anlık değeridir. Durum, bileşenin ilk oluşturulduğunda veya herhangi bir kullanıcı etkileşimi nedeniyle güncellendiğinde değişebilir. Bir bileşenin durumu, setState() yöntemi ile güncellenebilir.
+
+Bir bileşenin özellikleri, bileşene sağlanan değerlerdir. Özellikler, genellikle bileşenin özelliklerini ve davranışını özelleştirmek için kullanılır. Bir bileşenin özellikleri, bileşenin oluşturulduğu ana bileşenden aktarılabilir ve genellikle bileşenin işlevleri tarafından kullanılabilir.
+
+Bir bileşenin davranışı, bileşenin etkileşimleri sonucu gerçekleşen eylemleri tanımlayan kod bloklarıdır. Bileşen davranışları, kullanıcıların uygulama ile etkileşim kurduğunda veya uygulama içinde herhangi bir etkileşim gerçekleştirdiğinde gerçekleştirilebilir. Örneğin, bir düğmeye tıklandığında, bir bileşenin davranışı bu tıklama eylemine tepki vermek olabilir.
+
+Bileşen stateleri, bir bileşenin durumunu, özelliklerini ve davranışını yönetmek için kullanılır ve React uygulamalarının ölçeklenebilir ve yeniden kullanılabilir olmasını sağlar.
+
+3. Propları açıklayın.
+
+React JS'teki bileşenlerin propları, bir bileşenin dış dünyadan alabileceği verilerdir ve bileşenin özelliklerini ve davranışını özelleştirmek için kullanılır. Proplar, bir bileşenin üst bileşeninden veya ana uygulamadan aktarılabilir.
+
+Proplar, sadece okunabilir (read-only) olmalıdır ve bir bileşenin durumunun değiştirilmesi gerektiğinde setState() yöntemi kullanılmalıdır. Bir bileşen, aldığı propların değişmesi durumunda yeniden render edilebilir.
+
+Proplar, bileşenlerin genellikle tekrar kullanılabilir ve özelleştirilebilir olmasını sağlar.
+
+4. Side effektler nelerdir ve bir React bileşenindeki efektleri belirli state veya prop değişiklikleriyle nasıl senkronize edersiniz?
+
+Side effect'ler, bir fonksiyonun dış dünyada bir etkileşimde bulunması sonucu gerçekleşen davranışlar veya değişikliklerdir. Örnek olarak, bir API isteği yapmak, bir dosyaya yazmak veya DOM elementlerinde bir değişiklik yapmak side effect örnekleri olabilir.
+
+React bileşenleri, kullanıcı etkileşimleri veya bileşen durumlarındaki değişiklikler nedeniyle yeniden render edildiğinde side effect'lerin gerçekleştirilmesi için React tarafından sağlanan useEffect() kancası kullanılabilir. useEffect() kancası, bileşenin her render edilmesinden sonra çalışır ve belirli bir state veya prop değiştiğinde tekrar çalıştırılmasını sağlayabilir.
+
+Örneğin, bir bileşen, bir API'den veri alarak bir liste oluşturuyorsa, useEffect() kancası, bileşenin ilgili props veya state değiştiğinde yeniden API isteği yapmasını ve listenin güncellenmesini sağlayabilir.
